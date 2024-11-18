@@ -1,0 +1,83 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "ba76e66c-f739-4a63-bc1d-d31f8f4ac078",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "<!DOCTYPE html>\n",
+    "<html lang=\"en\">\n",
+    "\n",
+    "<head>\n",
+    "    <meta charset=\"UTF-8\">\n",
+    "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n",
+    "    <title>100以内加减法计算器</title>\n",
+    "</head>\n",
+    "\n",
+    "<body>\n",
+    "    <h1>100以内加减法计算器</h1>\n",
+    "    <label for=\"num1\">请输入第一个数字（100以内）：</label>\n",
+    "    <input type=\"number\" id=\"num1\" min=\"0\" max=\"100\" required><br><br>\n",
+    "\n",
+    "    <label for=\"num2\">请输入第二个数字（100以内）：</label>\n",
+    "    <input type=\"number\" id=\"num2\" min=\"0\" max=\"100\" required><br><br>\n",
+    "\n",
+    "    <label for=\"operator\">请选择运算符：</label>\n",
+    "    <select id=\"operator\">\n",
+    "        <option value=\"+\">加</option>\n",
+    "        <option value=\"-\">减</option>\n",
+    "    </select><br><br>\n",
+    "\n",
+    "    <input type=\"button\" value=\"计算\" onclick=\"calculate()\">\n",
+    "\n",
+    "    <p id=\"result\"></p>\n",
+    "\n",
+    "    <script>\n",
+    "        function calculate() {\n",
+    "            var num1 = parseInt(document.getElementById('num1').value);\n",
+    "            var num2 = parseInt(document.getElementById('num2').value);\n",
+    "            var operator = document.getElementById('operator').value;\n",
+    "\n",
+    "            if (operator === '+') {\n",
+    "                var result = num1 + num2;\n",
+    "            } else if (operator === '-') {\n",
+    "                result = num1 - num2;\n",
+    "            }\n",
+    "\n",
+    "            if (result >= 0 && result <= 100) {\n",
+    "                document.getElementById('result').innerHTML = \"结果是：\" + result;\n",
+    "            } else {\n",
+    "                document.getElementById('result').innerHTML = \"结果超出100以内范围，请重新计算。\";\n",
+    "            }\n",
+    "        }\n",
+    "    </script>\n",
+    "</body>\n",
+    "\n",
+    "</html>"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "anaconda-2022.05-py39",
+   "language": "python",
+   "name": "conda-env-anaconda-2022.05-py39-py"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.9.12"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
